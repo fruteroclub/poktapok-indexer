@@ -4,6 +4,14 @@ import { pulpaTokenABI } from "./abis/PulpaTokenABI";
 import { xocolatlTokenABI } from "./abis/XocolatlTokenABI";
 
 export default createConfig({
+  database: {
+    kind: "postgres",
+    connectionString: process.env.DATABASE_URL,
+    poolConfig: {
+      max: 100,
+      ssl: true,
+    },
+  },
   networks: {
     base: {
       chainId: 8453,
