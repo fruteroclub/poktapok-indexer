@@ -6,6 +6,20 @@ export const account = onchainTable("account", (t) => ({
   isOwner: t.boolean().notNull(),
 }));
 
+export const pulpaAccount = onchainTable("pulpa_account", (t) => ({
+  address: t.hex().primaryKey(),
+  balance: t.bigint().notNull(),
+  inflow: t.bigint().notNull(),
+  outflow: t.bigint().notNull(),
+}));
+
+export const xocBaseAccount = onchainTable("xoc_base_account", (t) => ({
+  address: t.hex().primaryKey(),
+  balance: t.bigint().notNull(),
+  inflow: t.bigint().notNull(),
+  outflow: t.bigint().notNull(),
+}));
+
 export const accountRelations = relations(account, ({ many }) => ({
   transferFromEvents: many(transferEvent, { relationName: "from_account" }),
   transferToEvents: many(transferEvent, { relationName: "to_account" }),
@@ -22,7 +36,7 @@ export const transferEvent = onchainTable(
   }),
   (table) => ({
     fromIdx: index("from_index").on(table.from),
-  }),
+  })
 );
 
 export const transferEventRelations = relations(transferEvent, ({ one }) => ({
@@ -47,7 +61,7 @@ export const allowance = onchainTable(
   }),
   (table) => ({
     pk: primaryKey({ columns: [table.owner, table.spender] }),
-  }),
+  })
 );
 
 export const approvalEvent = onchainTable("approval_event", (t) => ({

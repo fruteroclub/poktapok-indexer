@@ -32,10 +32,10 @@ export default createConfig({
           address: process.env.XOC_BASE_ADDRESS as `0x${string}`,
           startBlock: 2338635,
         },
-        polygon: {
-          address: process.env.XOC_POLYGON_ADDRESS as `0x${string}`,
-          startBlock: 32141175,
-        },
+        // polygon: {
+        //   address: process.env.XOC_POLYGON_ADDRESS as `0x${string}`,
+        //   startBlock: 32141175,
+        // },
       },
     },
   },
