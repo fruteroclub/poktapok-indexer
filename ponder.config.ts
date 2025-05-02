@@ -8,15 +8,17 @@ export default createConfig({
     base: {
       chainId: 8453,
       transport: http(process.env.PONDER_RPC_URL_8453),
+      pollingInterval: 150000,
     },
     optimism: {
       chainId: 10,
       transport: http(process.env.PONDER_RPC_URL_10),
+      pollingInterval: 150000,
     },
-    polygon: {
-      chainId: 137,
-      transport: http(process.env.PONDER_RPC_URL_137),
-    },
+    // polygon: {
+    //   chainId: 137,
+    //   transport: http(process.env.PONDER_RPC_URL_137),
+    // },
   },
   contracts: {
     PulpaToken: {
