@@ -31,27 +31,6 @@ ponder.on("PulpaToken:Transfer", async ({ event, context }) => {
   });
 });
 
-ponder.on("PulpaToken:Approval", async ({ event, context }) => {
-  // upsert "allowance".
-  await context.db
-    .insert(allowance)
-    .values({
-      spender: event.args.spender,
-      owner: event.args.owner,
-      amount: event.args.value,
-    })
-    .onConflictDoUpdate({ amount: event.args.value });
-
-  // add row to "approval_event".
-  await context.db.insert(approvalEvent).values({
-    id: event.id,
-    amount: event.args.value,
-    timestamp: Number(event.block.timestamp),
-    owner: event.args.owner,
-    spender: event.args.spender,
-  });
-});
-
 ponder.on("XocToken:Transfer", async ({ event, context }) => {
   await context.db
     .insert(account)
