@@ -20,6 +20,13 @@ export const xocBaseAccount = onchainTable("xoc_base_account", (t) => ({
   outflow: t.bigint().notNull(),
 }));
 
+export const xocPolygonAccount = onchainTable("xoc_polygon_account", (t) => ({
+  address: t.hex().primaryKey(),
+  balance: t.bigint().notNull(),
+  inflow: t.bigint().notNull(),
+  outflow: t.bigint().notNull(),
+}));
+
 export const accountRelations = relations(account, ({ many }) => ({
   transferFromEvents: many(transferEvent, { relationName: "from_account" }),
   transferToEvents: many(transferEvent, { relationName: "to_account" }),
