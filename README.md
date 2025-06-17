@@ -1,4 +1,4 @@
-# 🏀 Pok Ta Pok Indexer
+# 🏐 Pok Ta Pok Indexer
 
 > Blockchain Data Infrastructure for Regenerative Impact, inspired by the ancient Mayan ball game.
 
