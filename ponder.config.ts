@@ -8,12 +8,10 @@ export default createConfig({
     base: {
       chainId: 8453,
       transport: http(process.env.PONDER_RPC_URL_8453),
-      pollingInterval: 150000,
     },
     optimism: {
       chainId: 10,
       transport: http(process.env.PONDER_RPC_URL_10),
-      pollingInterval: 150000,
     },
     polygon: {
       chainId: 137,
@@ -37,6 +35,22 @@ export default createConfig({
         polygon: {
           address: process.env.XOC_POLYGON_ADDRESS as `0x${string}`,
           startBlock: 32141175,
+        },
+      },
+    },
+  },
+  blocks: {
+    PulpaToken: {
+      network: "optimism",
+      interval: 600,
+    },
+    XocToken: {
+      network: {
+        base: {
+          interval: 600,
+        },
+        polygon: {
+          interval: 600,
         },
       },
     },
