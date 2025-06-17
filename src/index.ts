@@ -6,7 +6,7 @@ import {
   xocPolygonAccount,
 } from "ponder:schema";
 
-ponder.on("PulpaTokenDev:Transfer", async ({ event, context }) => {
+ponder.on("PulpaToken:Transfer", async ({ event, context }) => {
   const pulpaAmount = event.args.value;
 
   const pulpaAccountFrom = await context.db.find(pulpaAccount, {
@@ -67,7 +67,7 @@ ponder.on("PulpaTokenDev:Transfer", async ({ event, context }) => {
   });
 });
 
-ponder.on("XocTokenDev:Transfer", async ({ event, context }) => {
+ponder.on("XocToken:Transfer", async ({ event, context }) => {
   const network = context.network;
   const xocAmount = event.args.value;
 

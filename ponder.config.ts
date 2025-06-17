@@ -19,13 +19,13 @@ export default createConfig({
     },
   },
   contracts: {
-    PulpaTokenDev: {
+    PulpaToken: {
       network: "optimism",
       abi: pulpaTokenABI,
       address: process.env.PULPA_OPTIMISM_ADDRESS as `0x${string}`,
       startBlock: 115537645,
     },
-    XocTokenDev: {
+    XocToken: {
       abi: xocolatlTokenABI,
       network: {
         base: {
@@ -40,11 +40,11 @@ export default createConfig({
     },
   },
   blocks: {
-    PulpaTokenDev: {
+    PulpaToken: {
       network: "optimism",
       interval: 600,
     },
-    XocTokenDev: {
+    XocToken: {
       network: {
         base: {
           interval: 600,
