@@ -15,10 +15,10 @@ export default createConfig({
       transport: http(process.env.PONDER_RPC_URL_10),
       pollingInterval: 150000,
     },
-    // polygon: {
-    //   chainId: 137,
-    //   transport: http(process.env.PONDER_RPC_URL_137),
-    // },
+    polygon: {
+      chainId: 137,
+      transport: http(process.env.PONDER_RPC_URL_137),
+    },
   },
   contracts: {
     PulpaToken: {
@@ -34,10 +34,10 @@ export default createConfig({
           address: process.env.XOC_BASE_ADDRESS as `0x${string}`,
           startBlock: 2338635,
         },
-        // polygon: {
-        //   address: process.env.XOC_POLYGON_ADDRESS as `0x${string}`,
-        //   startBlock: 32141175,
-        // },
+        polygon: {
+          address: process.env.XOC_POLYGON_ADDRESS as `0x${string}`,
+          startBlock: 32141175,
+        },
       },
     },
   },
