@@ -40,11 +40,11 @@ export default createConfig({
     },
   },
   blocks: {
-    PulpaToken: {
+    PulpaTokenUpdate: {
       network: "optimism",
       interval: 600,
     },
-    XocToken: {
+    XocTokenUpdate: {
       network: {
         base: {
           interval: 600,
